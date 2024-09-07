@@ -93,45 +93,45 @@ export default function Chat() {
                   {messages.map((message, index) => (
                     message.role === 'user' && (
                       <>
-                      <div className="flex  mt-5    items-center justify-end gap-2">
-                        
-                      <li key={index} className="flex ">
-                        <div className="rounded-xl p-2 md:p-4 bg-background shadow-md ">
-                          <p className="text-white">
-                            {message.content}
-                          </p>
+                        <div className="flex mt-5 items-center justify-end gap-2">
+
+                          <li key={index} className="flex ">
+                            <div className="rounded-xl p-2 md:p-4 bg-background shadow-md ">
+                              <p className="text-white">
+                                {message.content}
+                              </p>
+                            </div>
+                          </li>
+                          <div className="flex-nowrap">
+                            <CircleUserRound size={40} className="text-softTextColor" />
+                          </div>
                         </div>
-                      </li>
-                      <div  className="flex-nowrap">
-                      <CircleUserRound size={40} className="text-softTextColor" />
-                        </div>
-                      </div>
                       </>
                     )
-                    ||  message.role !== 'user'&& (
+                    || message.role !== 'user' && (
                       <div className="flex  items-start justify-between mt-5  gap-2">
                         <div className="flex-nowrap pt-2">
-                     <Image  width={50} height={50} src="/gemini.png" alt="Gemini"  />
-                     </div>
-                      <li key={index} className=" w-11/12">
-                      <div className="rounded-xl p-2 md:p-4 bg-background shadow-md  ">
-                        <p className="text-white">
-                          <ReactMarkdown>
-                            {message.content}
-                          </ReactMarkdown>
-                        </p>
+                          <Image width={50} height={50} src="/gemini.png" alt="Gemini" />
+                        </div>
+                        <li key={index} className=" w-11/12">
+                          <div className="rounded-xl p-2 md:p-4 bg-background shadow-md  ">
+                            <p className="text-white">
+                              <ReactMarkdown>
+                                {message.content}
+                              </ReactMarkdown>
+                            </p>
+                          </div>
+                        </li>
+
+
                       </div>
-                    </li>
-                     
-                     
-                    </div>
                     )
 
                   ))}
                 </ul>
               </div>
 
-             
+
             </div>
 
           )}
@@ -146,9 +146,9 @@ export default function Chat() {
                   className="flex-1 bg-transparent border-none outline-none p-2 text-md text-gray-400"
                   placeholder="Enter a prompt here"
                 />
-                <div className="flex cursor-pointer text-white">
+                <button type="submit" className="flex cursor-pointer text-white">
                   <SendHorizontal type="submit" size={20} />
-                </div>
+                </button>
               </div>
             </form>
             <p className="text-gray-400 text-sm text-center p-3">
