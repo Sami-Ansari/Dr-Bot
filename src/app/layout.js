@@ -14,7 +14,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         {/* <ContextProvider> */}
+        <main className="bg-[#131314]">
           {children}
+        </main>
           {/* </ContextProvider> */}
       </body>
     </html>
